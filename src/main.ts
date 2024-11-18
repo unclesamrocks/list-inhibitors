@@ -11,7 +11,7 @@ const main = async () => {
   const cmdOut = await exec(getInhibintors());
   const inhibitors: string[] = [];
 
-  for await (const match of cmdOut.matchAll(REGEX_INHIBITOR)) {
+  for (const match of cmdOut.matchAll(REGEX_INHIBITOR)) {
     const stdout = await exec(checkInhibitor(match[0]));
     const appId = stdout.match(REGEX_APP_ID)?.[0];
 
