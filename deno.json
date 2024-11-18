@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-run --watch src/main.ts",
+    "build": "deno compile --allow-run --output out/list-inhibitors src/main.ts && deno run --env-file copy",
+    "copy": "cp out/list-inhibitors $DESTINATION_APP"
+  }
+}
